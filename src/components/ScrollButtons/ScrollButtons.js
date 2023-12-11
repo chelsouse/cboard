@@ -47,7 +47,7 @@ const ScrollButtons = props => {
     [isScrollDown, isScrollTop, props.boardContainer]
   );
 
-  const boardContainer = props.boardContainer.current;
+  const boardContainer = props.boardContainer && props.boardContainer.current;
 
   const step = () => {
     const isFixedBoard = boardContainer.className.includes('Grid_root');
