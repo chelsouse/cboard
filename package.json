@@ -55,6 +55,7 @@
     "mime-types": "^2.1.35",
     "moment": "2.29.4",
     "mongoose": "^6.12.0",
+    "npm": "^10.2.4",
     "ogv": "^1.8.9",
     "pdfmake": "^0.2.7",
     "prop-types": "^15.8.1",
@@ -119,26 +120,8 @@
     ]
   },
   "jest": {
-    "transformIgnorePatterns": [
-      "node_modules/(?!idb)"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
-    },
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/polyfills.js",
-      "!src/config.js",
-      "!src/index.js",
-      "!src/common/test_utils.js",
-      "!src/components/**/index.js",
-      "!src/providers/**/index.js",
-      "!src/components/**/*.messages.js",
-      "!src/components/**/*.container.js",
-      "!src/components/**/*.helpers.js",
-      "!src/components/Board/SymbolSearch/SymbolSearch.component.js",
-      "!src/components/Board/TileEditor/TileEditor.component.js",
-      "!src/registerServiceWorker.js"
+    "coverageReporters": [
+      "html"
     ]
   },
   "scripts": {
@@ -148,7 +131,7 @@
     "build-cordova-debug": "react-app-rewired build",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "decrypt:local": "./scripts/decrypt-private.sh local",
     "encrypt:local": "./scripts/encrypt-private.sh local",
     "decrypt:prod": "./scripts/decrypt-private.sh prod",
